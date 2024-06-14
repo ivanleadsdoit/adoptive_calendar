@@ -181,7 +181,8 @@ class _AdoptiveCalendarState extends State<AdoptiveCalendar> {
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
                               fontWeight: FontWeight.w600,
-                              color: Color.fromARGB(30, 235, 235, 245),
+                              fontSize: 13,
+                              color: Color(0x4DEBEBF5),
                             ),
                           ),
                         );
@@ -312,10 +313,10 @@ class _AdoptiveCalendarState extends State<AdoptiveCalendar> {
           ]
         ],
       ),
-      if (isPortrait)
-        const SizedBox(
-          height: 10,
-        ),
+      // if (isPortrait)
+      //   const SizedBox(
+      //     height: 10,
+      //   ),
     ];
 
     Widget timeWidget = GestureDetector(
