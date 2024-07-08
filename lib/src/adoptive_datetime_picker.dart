@@ -113,19 +113,21 @@ class _AdoptiveCalendarState extends State<AdoptiveCalendar> {
     var orientation = MediaQuery.of(context).orientation;
 
     /// A boolean value that indicates whether the device is in portrait orientation.
-    bool isPortrait = (orientation == Orientation.portrait) ? true : false;
 
-    if (isPortrait) {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
-      ]);
-    } else {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ]);
-    }
+    bool isPortrait = true;
+    // bool isPortrait = (orientation == Orientation.portrait) ? true : false;
+    //
+    // if (isPortrait) {
+    //   SystemChrome.setPreferredOrientations([
+    //     DeviceOrientation.portraitUp,
+    //     DeviceOrientation.portraitDown,
+    //   ]);
+    // } else {
+    //   SystemChrome.setPreferredOrientations([
+    //     DeviceOrientation.landscapeLeft,
+    //     DeviceOrientation.landscapeRight,
+    //   ]);
+    // }
 
     Widget calendarBody = isYearSelected!
         ? SizedBox(
@@ -382,12 +384,12 @@ class _AdoptiveCalendarState extends State<AdoptiveCalendar> {
         if (!isPortrait) Container(height: screenHeight * 0.1),
         GestureDetector(
             onTap: () {
-              SystemChrome.setPreferredOrientations([
-                DeviceOrientation.portraitUp,
-                DeviceOrientation.portraitDown,
-                DeviceOrientation.landscapeRight,
-                DeviceOrientation.landscapeLeft,
-              ]);
+              // SystemChrome.setPreferredOrientations([
+              //   DeviceOrientation.portraitUp,
+              //   DeviceOrientation.portraitDown,
+              //   DeviceOrientation.landscapeRight,
+              //   DeviceOrientation.landscapeLeft,
+              // ]);
               returnDate ??= _selectedDate;
               Navigator.pop(context, returnDate);
             },
@@ -404,12 +406,12 @@ class _AdoptiveCalendarState extends State<AdoptiveCalendar> {
         if (didPop) {
           return;
         }
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown,
-          DeviceOrientation.landscapeRight,
-          DeviceOrientation.landscapeLeft,
-        ]);
+        // SystemChrome.setPreferredOrientations([
+        //   DeviceOrientation.portraitUp,
+        //   DeviceOrientation.portraitDown,
+        //   DeviceOrientation.landscapeRight,
+        //   DeviceOrientation.landscapeLeft,
+        // ]);
 
         /// Close the current screen and return the [returnDate] to the previous screen.
         Navigator.pop(context, widget.action ? null : returnDate);
